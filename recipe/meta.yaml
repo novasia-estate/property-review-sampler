@@ -1,0 +1,29 @@
+package:
+  name: property-review-sampler
+  version: 1.0.0
+source:
+  path: ..
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv"
+  entry_points:
+    - property-review-sampler = property_review_sampler.cli:main
+requirements:
+  host:
+    - python >=3.10
+    - pip
+    - setuptools >=77
+  run:
+    - python >=3.10
+test:
+  imports:
+    - property_review_sampler
+  commands:
+    - property-review-sampler --help
+about:
+  home: https://novasia.estate/
+  dev_url: https://github.com/novasia-estate/property-review-sampler
+  license: MIT
+  license_file: LICENSE
+  summary: Reproducible whole-property editorial QA sampling and coverage audit.

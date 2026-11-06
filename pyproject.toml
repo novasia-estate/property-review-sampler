@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "property-review-sampler"
+version = "1.0.0"
+description = "Reproducible group-safe editorial review samples with coverage and inclusion audit."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name="NovAsia Estate"}]
+[project.urls]
+Homepage = "https://novasia.estate/"
+Source = "https://github.com/novasia-estate/property-review-sampler"
+[project.scripts]
+property-review-sampler = "property_review_sampler.cli:main"
+[tool.setuptools.packages.find]
+where = ["src"]

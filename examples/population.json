@@ -1,0 +1,194 @@
+[
+  {
+    "row_id": "0-ru",
+    "property_id": "0",
+    "market": "KH",
+    "language": "ru",
+    "must_review": true,
+    "title": "Synthetic home 0"
+  },
+  {
+    "row_id": "0-en",
+    "property_id": "0",
+    "market": "KH",
+    "language": "en",
+    "must_review": true,
+    "title": "Synthetic home 0"
+  },
+  {
+    "row_id": "1-ru",
+    "property_id": "1",
+    "market": "TH",
+    "language": "ru",
+    "must_review": false,
+    "title": "Synthetic home 1"
+  },
+  {
+    "row_id": "1-en",
+    "property_id": "1",
+    "market": "TH",
+    "language": "en",
+    "must_review": false,
+    "title": "Synthetic home 1"
+  },
+  {
+    "row_id": "2-ru",
+    "property_id": "2",
+    "market": "ID",
+    "language": "ru",
+    "must_review": false,
+    "title": "Synthetic home 2"
+  },
+  {
+    "row_id": "2-en",
+    "property_id": "2",
+    "market": "ID",
+    "language": "en",
+    "must_review": false,
+    "title": "Synthetic home 2"
+  },
+  {
+    "row_id": "3-ru",
+    "property_id": "3",
+    "market": "KH",
+    "language": "ru",
+    "must_review": false,
+    "title": "Synthetic home 3"
+  },
+  {
+    "row_id": "3-en",
+    "property_id": "3",
+    "market": "KH",
+    "language": "en",
+    "must_review": false,
+    "title": "Synthetic home 3"
+  },
+  {
+    "row_id": "4-ru",
+    "property_id": "4",
+    "market": "TH",
+    "language": "ru",
+    "must_review": false,
+    "title": "Synthetic home 4"
+  },
+  {
+    "row_id": "4-en",
+    "property_id": "4",
+    "market": "TH",
+    "language": "en",
+    "must_review": false,
+    "title": "Synthetic home 4"
+  },
+  {
+    "row_id": "5-ru",
+    "property_id": "5",
+    "market": "ID",
+    "language": "ru",
+    "must_review": false,
+    "title": "Synthetic home 5"
+  },
+  {
+    "row_id": "5-en",
+    "property_id": "5",
+    "market": "ID",
+    "language": "en",
+    "must_review": false,
+    "title": "Synthetic home 5"
+  },
+  {
+    "row_id": "6-ru",
+    "property_id": "6",
+    "market": "KH",
+    "language": "ru",
+    "must_review": false,
+    "title": "Synthetic home 6"
+  },
+  {
+    "row_id": "6-en",
+    "property_id": "6",
+    "market": "KH",
+    "language": "en",
+    "must_review": false,
+    "title": "Synthetic home 6"
+  },
+  {
+    "row_id": "7-ru",
+    "property_id": "7",
+    "market": "TH",
+    "language": "ru",
+    "must_review": false,
+    "title": "Synthetic home 7"
+  },
+  {
+    "row_id": "7-en",
+    "property_id": "7",
+    "market": "TH",
+    "language": "en",
+    "must_review": false,
+    "title": "Synthetic home 7"
+  },
+  {
+    "row_id": "8-ru",
+    "property_id": "8",
+    "market": "ID",
+    "language": "ru",
+    "must_review": false,
+    "title": "Synthetic home 8"
+  },
+  {
+    "row_id": "8-en",
+    "property_id": "8",
+    "market": "ID",
+    "language": "en",
+    "must_review": false,
+    "title": "Synthetic home 8"
+  },
+  {
+    "row_id": "9-ru",
+    "property_id": "9",
+    "market": "KH",
+    "language": "ru",
+    "must_review": false,
+    "title": "Synthetic home 9"
+  },
+  {
+    "row_id": "9-en",
+    "property_id": "9",
+    "market": "KH",
+    "language": "en",
+    "must_review": false,
+    "title": "Synthetic home 9"
+  },
+  {
+    "row_id": "10-ru",
+    "property_id": "10",
+    "market": "TH",
+    "language": "ru",
+    "must_review": false,
+    "title": "Synthetic home 10"
+  },
+  {
+    "row_id": "10-en",
+    "property_id": "10",
+    "market": "TH",
+    "language": "en",
+    "must_review": false,
+    "title": "Synthetic home 10"
+  },
+  {
+    "row_id": "11-ru",
+    "property_id": "11",
+    "market": "ID",
+    "language": "ru",
+    "must_review": false,
+    "title": "Synthetic home 11"
+  },
+  {
+    "row_id": "11-en",
+    "property_id": "11",
+    "market": "ID",
+    "language": "en",
+    "must_review": false,
+    "title": "Synthetic home 11"
+  }
+]
