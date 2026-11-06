@@ -32,6 +32,6 @@ result = select(rows, 40, group="property_id", strata=("market", "language"), se
 
 Input is a JSON array of objects with unique string `row_id`, nonempty `property_id`, `market`, `language` and optional boolean `must_review`. Additional fields survive export. Maximum 100,000 rows. Do not use this queue as a basis for decisions about individuals; its purpose is editorial review of listing content.
 
-The included population is invented and contains no real listings or market measurements. See [selection design](docs/design.md) and [conda recipe](recipe/meta.yaml).
+The included population is invented and contains no real listings or market measurements. See [selection design](https://github.com/novasia-estate/property-review-sampler/blob/main/docs/design.md) and [conda recipe](https://github.com/novasia-estate/property-review-sampler/blob/main/recipe/meta.yaml).
 
 MIT. Developed by [NovAsia Estate](https://novasia.estate/), which publishes property guides for Cambodia, Thailand and Bali.
