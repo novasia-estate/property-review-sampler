@@ -35,3 +35,14 @@ Input is a JSON array of objects with unique string `row_id`, nonempty `property
 The included population is invented and contains no real listings or market measurements. See [selection design](https://github.com/novasia-estate/property-review-sampler/blob/main/docs/design.md) and [conda recipe](https://github.com/novasia-estate/property-review-sampler/blob/main/recipe/meta.yaml).
 
 MIT. Developed by [NovAsia Estate](https://novasia.estate/), which publishes property guides for Cambodia, Thailand and Bali.
+
+## 1.2: explicit review scope
+
+Reuse completed review work by excluding explicitly named property IDs with reasons.
+Create `reviewed.json`, for example `{"property-123":"Reviewed in batch 2026-11-06; unchanged"}`. IDs must exist in the current input and every reason must be nonempty (at most 500 characters). Unknown IDs fail so a stale exclusion file cannot silently change the scope. Files are bounded to 100 KB.
+
+```sh
+property-review-sampler examples/population.json --budget 6 --exclude-reviewed examples/reviewed.json --out review
+```
+
+Library: `select(rows, budget, exclude_groups={"property-123":"Reviewed; unchanged"})`. Exclusions always apply to the whole property group, including its language variants. A mandatory group cannot be excluded; resolve the conflicting policy explicitly. The optional report schema 2 retains every excluded group, reason and row ID, along with original population fingerprint, total and eligible row counts. Coverage and uncovered strata refer to the eligible population only; excluded groups are not claimed as newly reviewed. Without this option, the original schema 1 report and selection remain unchanged. Reasons are reviewer assertions, not verified review records.

@@ -6,11 +6,16 @@ def main():
     p=argparse.ArgumentParser(description="Choose whole property groups for editorial QA; never splits language variants.")
     p.add_argument("input",type=Path);p.add_argument("--budget",type=int,required=True);p.add_argument("--out",type=Path,required=True)
     p.add_argument("--seed",default="20261106");p.add_argument("--group",default="property_id");p.add_argument("--strata",default="market,language")
+    p.add_argument("--exclude-reviewed",type=Path,help="JSON object mapping already-reviewed property IDs to reasons")
     a=p.parse_args()
     try:
         rows=json.loads(a.input.read_text(encoding="utf-8"))
         if not isinstance(rows,list): raise ValueError("input must be a JSON array")
-        result=select(rows,a.budget,group=a.group,strata=tuple(a.strata.split(",")),seed=a.seed)
+        exclusions=None
+        if a.exclude_reviewed is not None:
+            if a.exclude_reviewed.stat().st_size > 100000: raise ValueError("exclusion file exceeds 100KB")
+            exclusions=json.loads(a.exclude_reviewed.read_text(encoding="utf-8"))
+        result=select(rows,a.budget,exclude_groups=exclusions,group=a.group,strata=tuple(a.strata.split(",")),seed=a.seed)
         a.out.mkdir(parents=True,exist_ok=True)
         (a.out/"audit.json").write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
         fields=sorted(set().union(*(r.keys() for r in result["selected_rows"]))) if result["selected_rows"] else ["row_id"]
