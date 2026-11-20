@@ -56,12 +56,12 @@ def select(rows, budget, *, group="property_id", strata=("market", "language"), 
         g = min(fitting, key=lambda g: (-sum(c not in covered for c in cells[g]), sum(covered[c] for c in cells[g]), len(groups[g]), rank(g)))
         add(g, "coverage / balance / deterministic tie-break")
         cost += len(groups[g]); remaining.remove(g)
-    all_cells = set().union(*cells.values()) if cells else set()
+    population_counts = Counter(cell for group_cells in cells.values() for cell in group_cells)
     selected = [dict(r) for g in chosen for r in sorted(groups[g], key=lambda r:r["row_id"])]
     report = {"schema_version":1, "seed":str(seed), "budget_rows":budget, "selected_rows":selected,
             "selected_groups":[{"group":g,"rows":len(groups[g]),"reason":reasons[g]} for g in chosen],
-            "coverage":[{"stratum":dict(zip(strata,c)),"population_groups":sum(c in cs for cs in cells.values()),"selected_groups":covered[c]} for c in sorted(all_cells)],
-            "uncovered_strata":[dict(zip(strata,c)) for c in sorted(all_cells-set(covered))],
+            "coverage":[{"stratum":dict(zip(strata,c)),"population_groups":population_counts[c],"selected_groups":covered[c]} for c in sorted(population_counts)],
+            "uncovered_strata":[dict(zip(strata,c)) for c in sorted(population_counts.keys()-covered.keys())],
             "unused_budget_rows":budget-cost,
             "population_sha256":hashlib.sha256(json.dumps(sorted(rows,key=lambda r:r["row_id"]),sort_keys=True,ensure_ascii=False,separators=(",",":")).encode()).hexdigest(),
             "limitation":"Purposive editorial QA sample; inclusion probabilities and unbiased prevalence estimates are not supplied."}
